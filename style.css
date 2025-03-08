@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #04151F;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+p {
+    margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.carousel {
+    width: 300px;
+    height: 400px;
+    position: relative;
+}
+
+.carousel-image {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.text-section {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+#counter {
+    font-size: 18px;
+}
+
+.separator {
+    margin: 10px 0;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+.heart {
+    position: absolute;
+    top: -20px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 0, 179);
+    transform: rotate(-45deg);
+    animation: fall linear infinite;
+    opacity: 1;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 0, 179);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        flex-direction: column;
+    }
+
+    .carousel {
+        width: 90%;
+        height: auto;
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        position: absolute;
+    }
+
+    .carousel-image.active {
+        opacity: 1;
+        position: relative;
+    }
+
+    .carousel-button {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .prev-button {
+        left: 10px;
+    }
+
+    .next-button {
+        right: 10px;
+    }
+
+    .music-player iframe {
+        width: 100%;
+        height: auto;
+    }
+
+    .text-section {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    #counter {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
